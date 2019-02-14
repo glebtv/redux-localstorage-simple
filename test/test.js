@@ -58,9 +58,9 @@
 
 	var _redux = __webpack_require__(2);
 
-	var _index = __webpack_require__(24);
+	var _index = __webpack_require__(23);
 
-	var _deepEqual = __webpack_require__(28);
+	var _deepEqual = __webpack_require__(27);
 
 	var _deepEqual2 = _interopRequireDefault(_deepEqual);
 
@@ -410,23 +410,23 @@
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(19);
+	var _combineReducers = __webpack_require__(18);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(21);
+	var _bindActionCreators = __webpack_require__(20);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(22);
+	var _applyMiddleware = __webpack_require__(21);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(23);
+	var _compose = __webpack_require__(22);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(20);
+	var _warning = __webpack_require__(19);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -1197,20 +1197,13 @@
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(16);
-
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(global, module) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _ponyfill = __webpack_require__(18);
+	var _ponyfill = __webpack_require__(17);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -1233,10 +1226,10 @@
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(17)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(16)(module)))
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -1252,7 +1245,7 @@
 
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1280,7 +1273,7 @@
 	};
 
 /***/ },
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -1294,7 +1287,7 @@
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(20);
+	var _warning = __webpack_require__(19);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -1428,7 +1421,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1458,7 +1451,7 @@
 	}
 
 /***/ },
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1514,7 +1507,7 @@
 	}
 
 /***/ },
-/* 22 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1525,7 +1518,7 @@
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(23);
+	var _compose = __webpack_require__(22);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -1577,7 +1570,7 @@
 	}
 
 /***/ },
-/* 23 */
+/* 22 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1620,7 +1613,7 @@
 	}
 
 /***/ },
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1636,7 +1629,7 @@
 	exports.combineLoads = combineLoads;
 	exports.clear = clear;
 
-	var _objectMerge = __webpack_require__(25);
+	var _objectMerge = __webpack_require__(24);
 
 	var _objectMerge2 = _interopRequireDefault(_objectMerge);
 
@@ -1948,7 +1941,7 @@
 	  } else {
 	    // Load only specified states into the local Redux state tree
 	    states.forEach(function (state) {
-	      if (localStorage[namespace + '_' + state] !== 'undefined') {
+	      if (typeof localStorage[namespace + '_' + state] !== 'undefined') {
 	        loadedState = (0, _objectMerge2.default)(loadedState, realiseObject(state, JSON.parse(localStorage[namespace + '_' + state])));
 	      } else {
 	        warn_("Invalid load '" + (namespace + '_' + state) + "' provided. Check your 'states' in 'load()'. If this is your first time running this app you may see this message. To disable it in future use the 'disableWarnings' flag, see documentation.");
@@ -2058,7 +2051,7 @@
 	}
 
 /***/ },
-/* 25 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -2179,8 +2172,8 @@
 	 */
 	function objectMerge(shadows) {
 	    'use strict';
-	    var objectForeach = __webpack_require__(26);
-	    var cloneFunction = __webpack_require__(27);
+	    var objectForeach = __webpack_require__(25);
+	    var cloneFunction = __webpack_require__(26);
 	    // this is the queue of visited objects / properties.
 	    var visited = [];
 	    // various merge options
@@ -2283,7 +2276,7 @@
 	module.exports = objectMerge;
 
 /***/ },
-/* 26 */
+/* 25 */
 /***/ function(module, exports) {
 
 	/**
@@ -2306,7 +2299,7 @@
 	module.exports = objectForeach;
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports) {
 
 	/*
@@ -2341,12 +2334,12 @@
 	module.exports = cloneFunction;
 
 /***/ },
-/* 28 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var pSlice = Array.prototype.slice;
-	var objectKeys = __webpack_require__(29);
-	var isArguments = __webpack_require__(30);
+	var objectKeys = __webpack_require__(28);
+	var isArguments = __webpack_require__(29);
 
 	var deepEqual = module.exports = function (actual, expected, opts) {
 	  if (!opts) opts = {};
@@ -2441,7 +2434,7 @@
 
 
 /***/ },
-/* 29 */
+/* 28 */
 /***/ function(module, exports) {
 
 	exports = module.exports = typeof Object.keys === 'function'
@@ -2456,7 +2449,7 @@
 
 
 /***/ },
-/* 30 */
+/* 29 */
 /***/ function(module, exports) {
 
 	var supportsArgumentsClass = (function(){
